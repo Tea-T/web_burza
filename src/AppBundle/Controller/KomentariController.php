@@ -81,7 +81,7 @@ class KomentariController extends Controller
 		$qb->setParameter('ime', $ime);
 		
 		$paginator = $this->get('knp_paginator');
-		$pagination = $paginator->paginate($qb, $request->query->getInt('page', 1),10);
+		$pagination = $paginator->paginate($qb, $request->query->getInt('page', 1),5);
 		
 		
 		return $this->render('default\show.html.twig', array('pagination' => $pagination));
